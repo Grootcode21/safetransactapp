@@ -30,9 +30,13 @@
                         </div>
                     </div>
                     <ul class="list-group t20">
-                        <li>247247--171012499998-Demand feeds</li>
-                        <li>888880--37194634566-KPLC</li>
-                        <li>346350--34004-MUWASCO</li>
+                        {% for accountlist in account_items %}
+                            {% if accountlist.outdated %}
+                        <li  class="list-group-item account-outdated">{{accountlist.text}}</li>
+                        {% else %}
+                        <a href="#"><li  class="list-group-item">{{accountlist.text}}</li></a>
+                        {% endif %}
+                        {% endfor %}
                     </ul>
                 </form>
                 <div class="row t10">
