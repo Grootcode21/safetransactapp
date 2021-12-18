@@ -3,9 +3,9 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
+        <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
 
         <meta charset="utf-8">
@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'accountlist/css/index.css'%}">
         <title>accountlist app</title>
     </head>
-    <body >
+    <body style="background-color: hsl(189, 100%, 50%);" class="text-center" >
         <div class="container-fluid" id="wrapper">
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-4" id="content">
@@ -25,17 +25,18 @@
                         <div class="input-group">
                             {{ form.text}}
                             <span>
-                                <button type="submit" class="btn btn-default" id="add-btn">ADD</button>
-                            </span>
-                            <div class="btn-group">
-                                <a href="{% url 'deleteoutdated'%}">
-                                <button clas="button" class="btn btn-danger">
-                                    <i class="glyphicon glyphicon-trash"></i>DELETE
-                                </button></a>
-                            </div>
+                                <button type="submit" class="btn btn-info" id="add-btn">ADD</button>
+                            </span>                           
+                        </div>
+                        <div class="btn-group pt-1">
+                            <a href="{% url 'deleteoutdated'%}">
+                            <button clas="button" class="btn btn-danger text-left">
+                                <i class="bi bi-trash"></i>DELETE
+                                
+                            </button></a>
                         </div>
                     </div>
-                    <ul class="list-group t20">
+                    <ul class="list-group t20 ">
                         {% for accountlist in account_items %}
                             {% if accountlist.outdated %}
                         <li  class="list-group-item account-outdated">{{accountlist.text}}</li>
@@ -54,7 +55,7 @@
 
                 </div>
             </div>
-            <p>This is my homepage</p>
+            
         </div>
         
 
@@ -64,9 +65,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-    <div class="row pad">
-        <div class="col-lg-12 text-center">
-            Copyright &copy; Grootcodes21
+    <div class="row pad pt-4">
+        <div class="col-lg-12 text-center bg-dark text-light">
+            Copyright &copy; <script>document.write(new Date().getFullYear());</script>
         </div>
     </div>
 </html>
